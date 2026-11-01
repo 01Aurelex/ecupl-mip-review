@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 资源清单 · 华政 MIP 复习站</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='19' font-size='18'>📘</text></svg>">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner" data-nav data-base="../"></div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Open Source Resources</span>
+      <h1>GitHub 资源清单</h1>
+      <p class="lede">
+        这些是穷尽检索 GitHub 后筛出的全部可用资源。每一个都标注了
+        <strong>匹配科目、星级用法、具体操作步骤与踩坑提示</strong>，
+        并附上不可回避的现实判断——哪些是真主力，哪些只是方法论参考，哪些需要你付出额外代价。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#list">查看全部七个</a>
+        <a class="btn btn-ghost" href="../index.html">返回首页</a>
+      </div>
+    </div>
+    <dl class="hero-side">
+      <div class="hero-fact"><dt>仓库总数</dt><dd>7 个</dd></div>
+      <div class="hero-fact"><dt>直接可用</dt><dd>3 个（题库 / 论文工具 / 条文）</dd></div>
+      <div class="hero-fact"><dt>仅方法论</dt><dd>2 个（法硕 Vault / 考研导航）</dd></div>
+      <div class="hero-fact"><dt>已归档</dt><dd>1 个（CNIPA-Note）</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Search Protocol</span>
+      <h2>检索是怎么做的</h2>
+      <p>检索分为四层，避免中文关键词被 GitHub 解析器吞掉。</p>
+    </div>
+
+    <div class="card mb">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>层级</th><th>字段</th><th>示例查询</th><th>命中</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>仓库元数据</td><td>name / description / readme</td><td class="mono">"华东政法"</td><td>9 个</td></tr>
+            <tr><td>引号短语</td><td>仓库名</td><td class="mono">"法律硕士" / "知产专硕" / "震川"</td><td>43 / 2 / 2</td></tr>
+            <tr><td>组合限定</td><td>in:name,description</td><td class="mono">"商标法" "专利法" "著作权法" 复习 笔记</td><td>1175 条（含噪声）</td></tr>
+            <tr><td>全库代码</td><td>文件内容</td><td class="mono">"知识产权硕士 备考" / "647 821"</td><td>1 条 / 0 条</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note warn mt">
+        <span class="nt">检索中的一个陷阱</span>
+        中文多词查询如 <code>知识产权 硕士 考研</code> 会被 GitHub 解析为空，<strong>直接返回 0 条</strong>——
+        这会让"确实不存在"和"没搜到"看起来一模一样。必须用引号短语或 <code>in:</code> 限定符逐个字段验证，
+        交叉确认后才能下"不存在"的结论。
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>穷尽性结论</h3>
+        <p>共执行 20 余组查询，覆盖仓库名、描述、README 三重字段与全库代码索引。
+          <strong>确认不存在</strong>针对华政 MIP 的任何形式的专项备考仓库。</p>
+      </div>
+      <div class="card">
+        <h3>最接近的三个</h3>
+        <p>① <code>patent-exam-2026</code>（题库，本站已抽取 707 题）、
+          ② <code>ECUPL-Thesis-Auto-format</code>（华政论文排版）、
+          ③ <code>lawpaper-skill</code>（法学论文写作全流程）。</p>
+      </div>
+      <div class="card">
+        <h3>最需要警惕的</h3>
+        <p><code>fashuo-learning-system-public</code> 与 <code>kaoyan-2026</code> 的专业课部分都是
+          <strong>法硕非法学</strong>的，与 MIP 的 647 / 821 无交集。数量庞大、界面精美，最容易误用。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="list">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Lineup</span>
+      <h2>资源全清单</h2>
+      <p>★ 数为对 MIP 两门自命题专业课的适配程度，不是仓库质量评分。</p>
+    </div>
+
+    <div class="grid g2" data-repos></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cross Reference</span>
+      <h2>仓库 × 科目 对照表</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>仓库</th><th>647 基础</th><th>647 专利法</th><th>647 竞争法</th>
+            <th>821 管理</th><th>821 政策</th><th>题库</th><th>论文</th><th>公共课</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>patent-exam-2026</strong></td>
+            <td>—</td><td>★</td><td>—</td><td>—</td><td>—</td><td>★</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td><strong>ECUPL-Thesis-Auto-format</strong></td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>★</td><td>—</td>
+          </tr>
+          <tr>
+            <td><strong>lawpaper-skill</strong></td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>★</td><td>—</td>
+          </tr>
+          <tr>
+            <td><strong>law（司考之路）</strong></td>
+            <td>△</td><td>△</td><td>△</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td><strong>CNIPA-Note</strong></td>
+            <td>—</td><td>△</td><td>—</td><td>△</td><td>△</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td><strong>kaoyan-2026</strong></td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>△</td>
+          </tr>
+          <tr>
+            <td><strong>fashuo-learning-system-public</strong></td>
+            <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>○</td><td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pill-row mt" style="justify-content:center">
+      <span class="chip">★ 主力资源</span>
+      <span class="chip gold">△ 部分可用</span>
+      <span class="chip plain">○ 仅方法论</span>
+      <span class="chip plain">— 不适用</span>
+    </div>
+
+    <div class="note mt">
+      <span class="nt">一眼看出的结构性结论</span>
+      <strong>647 与 821 的开源覆盖是不对称的。</strong>
+      647 有题库（本站已抽取 707 题）加上教师论文，几乎可以完全脱离付费资料；
+      821 整列几乎全空——唯一有价值的两个半是「教师论文」（本站已整理 37 位并附原文链接）
+      与 <code>CNIPA-Note</code>（已归档，仅作旁证）。
+      这就是为什么本站把 821 页做成「自建方案」而不是「资源导航」。
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">License & Ethics</span>
+      <h2>使用这些资源时的边界</h2>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3>题库与资料的来源性质</h3>
+        <ul class="bullets mt">
+          <li><strong>专利代理师题库</strong>：来自 GitHub 公开仓库 <code>patent-exam-2026</code>，
+            仓库声明其内容为「VLM OCR 深度解析版」，仅供个人学习</li>
+          <li><strong>法条与司法解释原文</strong>：依《著作权法》第五条属官方立法 / 司法文件，不受著作权保护</li>
+          <li><strong>实务类文章与讲义</strong>：各刊版权，按引用规范使用</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>实务提醒</h3>
+        <ul class="bullets mt">
+          <li>题库是<strong>专利代理师考试</strong>题，不是 MIP 真题——用它建手感，不用来预测题型</li>
+          <li><code>kaoyan-2026</code> 全部资源来自互联网公开渠道，仅供个人学习、勿商用</li>
+          <li>教师论文的引用请回到原文核对卷期页码</li>
+          <li>正式引用或决策前务必核对生效法条文本与判例当前状态</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap" data-footer></div>
+</footer>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/main.js"></script>
+</body>
+</html>

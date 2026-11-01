@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文写作与复试 · 华政 MIP 复习站</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='19' font-size='18'>📘</text></svg>">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner" data-nav data-base="../"></div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Thesis & Retest</span>
+      <h1>论文、复试与最后一公里</h1>
+      <p class="lede">
+        专硕同样要交学位论文，复试也要准备实务论文与案例分析报告。
+        好在有两个仓库能把这两件事的<strong>格式与规范环节</strong>全部自动化——
+        你只需要负责把想法写清楚，剩下的交给工具。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#thesis">论文排版</a>
+        <a class="btn btn-ghost" href="#write">写作与质检</a>
+      </div>
+    </div>
+    <dl class="hero-side">
+      <div class="hero-fact"><dt>排版工具</dt><dd>ECUPL-Thesis-Auto-format（华政官方模板）</dd></div>
+      <div class="hero-fact"><dt>写作工具</dt><dd>lawpaper-skill（MIT，8 阶段 + 31 条质检）</dd></div>
+      <div class="hero-fact"><dt>复试</dt><dd>含外语听力与口语测试</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band" id="thesis">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Tool One</span>
+      <h2>ECUPL-Thesis-Auto-format · 华政论文版式自动排版</h2>
+      <p>依据《华东政法大学硕士学位论文格式模板》自动格式化 Word 文档。
+        这是本次检索到的<strong>唯一直接绑定华政</strong>的工具——它省下的是纯粹机械、却最容易反复返工的格式劳动。</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3>覆盖的版式项</h3>
+        <ul class="bullets mt">
+          <li><strong>页面设置</strong>：A4、页边距、1.5 倍行距</li>
+          <li><strong>标题层级识别</strong>：自动解析并套用大纲级别</li>
+          <li><strong>章强制起页</strong>：每章另起一页</li>
+          <li><strong>引言起算页码</strong>：新建 section 并把页码 start 设为 1（改 OOXML 实现）</li>
+          <li><strong>TOC 样式改造</strong>：直接修改 <code>styles.xml</code> 中的 TOC1/2/3</li>
+          <li><strong>脚注处理</strong>、<strong>图表题注连续编号</strong></li>
+          <li><strong>参考文献格式化</strong>、<strong>长引文处理</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>操作步骤</h3>
+        <ol class="steps mt">
+          <li><div><b>安装依赖</b>
+            <span class="mono">cd format_paper && pip install -r requirements.txt</span><br>
+            <span class="inline-code">python-docx==0.8.11</span>（脚本固定依赖 Python 3.7+ 环境的该版本）</div></li>
+          <li><div><b>运行</b>
+            <span class="mono">python format_paper.py input.docx</span><br>
+            指定输出：<span class="inline-code">python format_paper.py input.docx -o output.docx</span></div></li>
+          <li><div><b>手动更新目录</b>
+            目录是 Word 字段。打开输出文件后<strong>手动"更新目录"一次</strong>。</div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="note warn">
+      <span class="nt">两个必须知道的坑</span>
+      <strong>一、</strong>该仓库 README 存在<strong>未解决的 Git 合并冲突标记</strong>（<code><<<<<<< HEAD</code> /
+      <code>=======</code> / <code>>>>>>>></code>），clone 后需自行修复，或直接阅读 <code>format_paper</code> 源码取用逻辑。
+      <strong>二、</strong>图 / 表题注的文本格式若偏离常见的「图1 …」「表1 …」，可能无法被识别；
+      脚注"每页重新编号"强依赖模板设置。脚本会尽力统一版式，但<strong>务必抽查一两页</strong>。
+    </div>
+  </div>
+</section>
+
+<section id="write">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Tool Two</span>
+      <h2>lawpaper-skill · 法学论文写作全流程</h2>
+      <p>融合何海波《法学论文写作》、田洪鋆《批判性思维与写作》、法大"十讲"（雷磊 / 张翔等）、
+        苏力 / 杨立新 / 尤陈俊 / 周大鸣等 20+ 份法学写作参考资料与《法学引注手册》第二版。
+        <strong>MIT 许可</strong>，双平台兼容（Hermes-agent / Claude Code）。</p>
+    </div>
+
+    <div class="card mb">
+      <h3>八阶段协作流程</h3>
+      <div class="table-wrap mt">
+        <table>
+          <thead>
+            <tr><th>阶段</th><th>对应书篇</th><th>协作产出</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Step 0</td><td>——</td><td>诊断用户状态 + 确定论文类型</td></tr>
+            <tr><td>Step 1</td><td>选题篇</td><td>选题陈述草稿（研究对象 + 核心问题 + 论点 + 方法）</td></tr>
+            <tr><td>Step 2</td><td>文献篇</td><td>检索策略 + 文献验证 + 文献综述草稿</td></tr>
+            <tr><td>Step 3</td><td>调查篇</td><td>研究方法设计 + 方法部分草稿</td></tr>
+            <tr><td>Step 4</td><td>论证篇</td><td>论证结构诊断 + 论证段落草稿（Toulmin 模型）</td></tr>
+            <tr><td>Step 5</td><td>行文篇</td><td>大纲 → 引言 → 各章节 → 摘要 → 结论，逐节协作下笔</td></tr>
+            <tr><td>Step 6</td><td>格式篇</td><td>引注格式化 + 参考文献整理</td></tr>
+            <tr><td>Step 7</td><td>伦理篇</td><td>类案检索 / 法条时效 / 脱敏审查</td></tr>
+            <tr><td>Final</td><td>——</td><td>自动化质量检查（31 条规则 × 8 个维度）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>五种行为循环</h3>
+        <ul class="bullets mt">
+          <li><strong>诊断</strong>：按方法论分析已有材料，识别缺口</li>
+          <li><strong>追问</strong>：每次问一个问题，直到信息够下笔</li>
+          <li><strong>讨论</strong>：分析选项利弊，帮你判断但不替你决定</li>
+          <li><strong>下笔</strong>：按方法论写草稿，附教练批注（写法逻辑 + 风险 + 变体）</li>
+          <li><strong>回顾</strong>：不满意或后期发现前期问题，回到前面重走</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>八条硬性规则</h3>
+        <ul class="bullets mt">
+          <li><strong>R1</strong> 不编造文献、引文、数据、法条</li>
+          <li><strong>R2</strong> 区分知道和不知道，不确定处用占位符</li>
+          <li><strong>R3</strong> 不据标题推测内容，不混淆作者观点与引述观点</li>
+          <li><strong>R4</strong> 生成后自查文献真实性、法条版本、判例引注完整性</li>
+          <li><strong>R5</strong> 法条引用必须注明版本和时效</li>
+          <li><strong>R6</strong> 判例引用必须标注案号、审理法院、裁判日期</li>
+          <li><strong>R7</strong> 代笔生成的引用一律用占位符</li>
+          <li><strong>R8</strong> 每次下笔必须附教练批注</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>自动化质检</h3>
+        <p class="source-note mb">八个检查维度：可信度 / 术语一致性 / 格式规范 / 学术语体 / 论证逻辑 / 结构完整性 / 法学引注 / 法学逻辑</p>
+        <div class="note plain" style="margin:0">
+          <span class="nt">运行</span>
+          <span class="mono">python scripts/review_legal.py paper.md</span><br>
+          <span class="mono">python scripts/check_stage.py 3 -f paper.md</span>
+        </div>
+        <div class="pill-row mt">
+          <span class="chip">8 维度</span>
+          <span class="chip gold">31 条规则</span>
+          <span class="chip plain">MIT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note mt">
+      <span class="nt">为什么 MIP 特别需要它</span>
+      专硕复试常要求提交<strong>实务论文或案例分析报告</strong>——这类文本的评判重点在
+      "分析是否到位、论证是否成链、引注是否规范"，而不是学理创新。
+      <code>lawpaper-skill</code> 的 R1—R8 硬性规则强制"不编造文献法条判例"，
+      R5 / R6 强制标注法条版本时效与判例案号，<strong>恰好命中实务写作最容易翻车的地方</strong>。
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Retest</span>
+      <h2>复试准备清单</h2>
+      <p>华政 MIP 复试采取差额形式，考核创新能力、学术能力和专业素养，
+        <strong>含外语听力和口语测试</strong>。以下是可以现在就动的准备项。</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3>专业素养</h3>
+        <ul class="bullets mt">
+          <li><strong>案例分析</strong>：准备 8—10 个知产实务案例（侵权判定 / 权利归属 / 损害赔偿 / 平台责任），每个写成 1500 字的定型答案</li>
+          <li><strong>实务工具熟悉度</strong>：专利检索流程、商标检索与近似判断、著作权登记与权属证明——MIP 课程里明确设了「知识产权检索」「知识产权文书」「知识产权案例分析」三门课</li>
+          <li><strong>教师研究方向</strong>：见<a href="faculty.html">教师论文库</a>，114 篇附原文链接。复试被问到"你读过谁的文章"是常见开场</li>
+          <li><strong>本人研究兴趣</strong>：MIP 三个方向（知识产权保护 / 知识产权管理 / 知识产权国际治理），需提前选定并能说清理由</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>外语听说</h3>
+        <ul class="bullets mt">
+          <li><strong>自我介绍</strong>：1 分钟版 + 2 分钟版，中英文各背熟</li>
+          <li><strong>专业英语</strong>：MIP 课程含「知识产权英语」——trademark / patent / copyright / trade secret / unfair competition 必须能随口说出</li>
+          <li><strong>常见问答</strong>：Why ECUPL? Why IP? What's your research plan? 准备英文答案</li>
+          <li><strong>国际视野素材</strong>：TRIPS、SEP/FRAND、跨境数据流动、AI 与著作权——可用阮开欣、董琪瑶、郑淑凤的论文作为英文讨论素材</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mt">
+      <h3>方向选择提示</h3>
+      <p class="mt">MIP 三个专业方向：
+        <strong>知识产权保护</strong>（依托最高人民法院"中国知识产权司法保护理论研究基地"与公检法平台支持）、
+        <strong>知识产权管理</strong>（聚焦上海科创中心与金融中心建设，企业 IP 管理 / 运营 / 金融三大方向）、
+        <strong>知识产权国际治理</strong>（全国首家承办 WIPO 中国暑期学校的高校）。
+        专硕培养方案要求专业实践不低于 10 学分——<strong>选方向时务必匹配你已有的实务资源</strong>：
+        有律所或代理机构实习经历的走保护或管理更顺，有外语优势与涉外兴趣的走国际治理。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap" data-footer></div>
+</footer>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/main.js"></script>
+</body>
+</html>

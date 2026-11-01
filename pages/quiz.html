@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识产权题库 · 华政 MIP 复习站</title>
+<meta name="description" content="707 道知识产权与专利相关真题，含答案、解析与教材页码，可按专题与题型筛选。来源：GitHub 公开仓库 patent-exam-2026。">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='19' font-size='18'>📘</text></svg>">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner" data-nav data-base="../"></div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Question Bank · 707 题</span>
+      <h1>知识产权<em>题库</em></h1>
+      <p class="lede">
+        全部题目取自 GitHub 公开仓库 <code>patent-exam-2026</code>（2026 年专利代理师资格考试题库，
+        由韩龙老师专题讲座 OCR 深度解析整理）。本站从中筛出与 647 知识产权基础直接相关的
+        <strong>专利法、商标法、著作权法、巴黎公约、TRIPS</strong> 五个板块，
+        保留原始答案、解析与教材页码，可直接溯源核对。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#bank">进入题库</a>
+        <a class="btn btn-ghost" href="#source">查看数据来源</a>
+      </div>
+    </div>
+    <dl class="hero-side">
+      <div class="hero-fact"><dt>专利法</dt><dd>499 题 · 30 个专题</dd></div>
+      <div class="hero-fact"><dt>商标法</dt><dd>85 题</dd></div>
+      <div class="hero-fact"><dt>著作权法</dt><dd>86 题</dd></div>
+      <div class="hero-fact"><dt>巴黎公约 / TRIPS</dt><dd>9 + 29 题</dd></div>
+      <div class="hero-fact"><dt>题型</dt><dd>单选 179 · 多选 529</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="bank">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Practice</span>
+      <h2>开始练习</h2>
+      <p>选择题后立即显示对错与解析。建议按专题逐个刷完再切换，错了就回教材对应页码。</p>
+    </div>
+
+    <div class="q-toolbar">
+      <label for="qTopic">专题</label>
+      <select id="qTopic"></select>
+      <label for="qMode">题型</label>
+      <select id="qMode">
+        <option value="all">不限</option>
+        <option value="s">仅单选</option>
+        <option value="m">仅多选</option>
+      </select>
+      <span class="q-progress" id="qCount"></span>
+    </div>
+
+    <div id="qList" data-quiz></div>
+  </div>
+</section>
+
+<section class="band" id="source">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Provenance</span>
+      <h2>数据来源与处理说明</h2>
+      <p>本站对题库做了完整的数据溯源与质量清洗，以下是全部处理记录。</p>
+    </div>
+
+    <div class="grid g2 mb">
+      <div class="card">
+        <h3>原始来源</h3>
+        <div id="qSource" class="source-note" style="margin-top:8px"></div>
+      </div>
+      <div class="card">
+        <h3>数据处理</h3>
+        <ul class="bullets mt">
+          <li><strong>原始题量</strong>：专利法 669 题 + 相关法 829 题 = 1498 题</li>
+          <li><strong>筛选</strong>：从相关法 829 题中取商标法、著作权法、巴黎公约与马拉喀什条约、TRIPS 四个专题（221 题），与专利法 669 题合并</li>
+          <li><strong>剔除 104 题</strong>：这些题目的选项在原始 OCR 中被截断（常见于 D 选项缺失），但答案与解析却引用了缺失选项，数据不自洽</li>
+          <li><strong>最终入库</strong>：707 题，全部含标准答案，707 题含解析，全部含教材页码</li>
+          <li><strong>题型校正</strong>：原始数据中 13 题的题型标注与答案字母数不符，已按答案字母数自动校正</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note warn">
+      <span class="nt">请注意这批题的性质</span>
+      这是<strong>专利代理师资格考试</strong>题库，不是华政 MIP 的历年真题——MIP 至今未公布任何真题。
+      它与 647 的关系在于：647 考纲覆盖商标法、著作权法、专利法、反不正当竞争法四门，
+      而这批题正好覆盖其中的商标法、著作权法、专利法三门（占 647 分值的 120 分），
+      并额外补充了国际条约部分。<strong>用它来建立法条肌肉记忆和做题手感，不要拿它预测 MIP 的题型。</strong>
+    </div>
+
+    <div class="note plain">
+      <span class="nt">版权与使用</span>
+      题库内容全部来自上述 GitHub 公开仓库，本站仅作筛选、清洗与结构化呈现，并逐题标注了源 ID 与原始文件。
+      原始仓库声明其内容为「VLM OCR 深度解析版」，请以仓库
+      <a href="https://github.com/lsq13060007958/patent-exam-2026" target="_blank" rel="noopener">README</a>
+      的说明为准，仅供个人学习使用。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How To Use</span>
+      <h2>怎么用这批题</h2>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>第一轮 · 建立手感</h3>
+        <p>按专题顺序全部刷一遍，只看对错不看解析。这轮的目的是摸清哪些专题你完全没有概念，
+          形成一张"薄弱专题清单"。</p>
+      </div>
+      <div class="card">
+        <h3>第二轮 · 回填法条</h3>
+        <p>对错题按专题归类，<strong>回到教材对应页码重读法条</strong>（题卡右下角标注了 P 页）。
+          每道错题都要能说清"错在哪个要件上"。</p>
+      </div>
+      <div class="card">
+        <h3>第三轮 · 限时手写</h3>
+        <p>抽取商标法与著作权法专题限时 20 分钟手写 20 题。
+          <strong>主观题考的是"写得出"，不是"选得出"</strong>——选择正确但写不出来的题，等于没会。</p>
+      </div>
+    </div>
+
+    <div class="pill-row mt" style="justify-content:center">
+      <a class="btn btn-primary" href="647.html">返回 647 备考路线</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap" data-footer></div>
+</footer>
+
+<script src="../assets/questions.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/main.js"></script>
+</body>
+</html>
