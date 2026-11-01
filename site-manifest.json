@@ -1,0 +1,47 @@
+{
+  "name": "华政 MIP 备考复习站",
+  "description": "华东政法大学知识产权硕士（MIP）备考复习站",
+  "subjects": {
+    "647": {
+      "name": "知识产权基础",
+      "score": 150,
+      "parts": { "著作权法": 40, "商标法": 40, "专利法": 40, "反不正当竞争法": 30 }
+    },
+    "821": {
+      "name": "知识产权综合",
+      "score": 150,
+      "parts": { "知识产权管理": 90, "知识产权政策": 60 }
+    }
+  },
+  "questionBank": {
+    "total": 707,
+    "bySubject": { "专利法": 499, "商标法": 85, "著作权法": 86, "巴黎公约与马拉喀什条约": 9, "与贸易有关的知识产权协定": 28 },
+    "topics": 34,
+    "types": { "single": 179, "multiple": 528 },
+    "source": {
+      "repository": "https://github.com/lsq13060007958/patent-exam-2026",
+      "online": "https://lsq13060007958.github.io/patent-exam-2026/",
+      "rawFiles": ["data_patent_2026.js", "data_xg_2026.js"],
+      "note": "原始题量 1498，筛选并清洗后入库 707 题；全部含标准答案、解析与教材页码，逐题保留源 ID 可溯源。"
+    }
+  },
+  "faculty": {
+    "count": 37,
+    "papers": 114,
+    "withOriginalLinks": 114,
+    "linkTypes": ["期刊页", "期刊目录", "全文PDF", "公众号全文", "期刊全文", "预印本PDF", "报刊全文", "机构库", "转载全文"]
+  },
+  "repos": {
+    "count": 7,
+    "ids": ["patent-exam", "fashuo-vault", "thesis-format", "lawpaper-skill", "sikao-law", "kaoyan-2026", "cnipa-note"]
+  },
+  "pages": [
+    "index.html", "pages/647.html", "pages/821.html", "pages/quiz.html",
+    "pages/faculty.html", "pages/resources.html", "pages/writing.html", "pages/plan.html"
+  ],
+  "license": {
+    "code": "CC BY-NC 4.0",
+    "note": "题库内容来自第三方公开仓库（patent-exam-2026），仅供个人学习；本站原创分析部分署名使用。"
+  },
+  "disclaimer": "本站为个人备考工具，不构成法律意见。考纲与科目以华政知识产权学院及研招网最新公告为准。"
+}
